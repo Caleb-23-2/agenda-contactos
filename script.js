@@ -26,5 +26,32 @@ formulario.addEventListener("submit", function (e) {
 
   contactos.push({ id: Date.now(), nombre, telefono, correo });
   formulario.reset();
+    mostrarContactos();
   mostrarMensaje("Contacto agregado correctamente.", false);
 });
+function mostrarContactos() {
+  const lista = document.getElementById("listaContactos");
+  lista.innerHTML = "";
+
+  if (contactos.length === 0) {
+    lista.textContent = "No hay contactos registrados.";
+    return;
+  }
+
+  contactos.forEach(function (c) {
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "tarjeta";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = c.nombre;
+    const p1 = document.createElement("p");
+    p1.textContent = "Teléfono: " + c.telefono;
+    const p2 = document.createElement("p");
+    p2.textContent = "Correo: " + c.correo;
+
+    tarjeta.append(h3, p1, p2);
+    lista.appendChild(tarjeta);
+  });
+}
+
+mostrarContactos();
