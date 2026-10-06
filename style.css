@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0 15px;
+  text-align: center;
+}
+h1 { color: #2c3e50; }
+form { display: flex; flex-direction: column; gap: 8px; }
+input { padding: 10px; }
+button {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover { background-color: #2980b9; }
+.ok { color: green; font-weight: bold; }
+.error { color: red; font-weight: bold; }
