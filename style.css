@@ -31,3 +31,6 @@ button:hover { background-color: #2980b9; }
 }
 .tarjeta h3 { margin: 0 0 5px; color: #2c3e50; }
 .tarjeta p { margin: 3px 0; }
+
+.eliminar { background-color: #e74c3c; margin-top: 5px; }
+.eliminar:hover { background-color: #c0392b; }
