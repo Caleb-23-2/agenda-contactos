@@ -41,6 +41,9 @@ function mostrarContactos() {
   contactos.forEach(function (c) {
     const tarjeta = document.createElement("div");
     tarjeta.className = "tarjeta";
+        tarjeta.onclick = function () {
+      verDetalle(c);
+    };
 
     const h3 = document.createElement("h3");
     h3.textContent = c.nombre;
@@ -52,7 +55,8 @@ function mostrarContactos() {
         const btn = document.createElement("button");
     btn.textContent = "Eliminar";
     btn.className = "eliminar";
-    btn.onclick = function () {
+        btn.onclick = function (e) {
+      e.stopPropagation();
       eliminarContacto(c.id);
     };
 
@@ -67,6 +71,14 @@ function eliminarContacto(id) {
   contactos = contactos.filter(function (c) {
     return c.id !== id;
   });
+    document.getElementById("detalle").textContent = "";
   mostrarContactos();
   mostrarMensaje("Contacto eliminado.", false);
+}
+
+function verDetalle(c) {
+  document.getElementById("detalle").textContent =
+    "Detalle → Nombre: " + c.nombre +
+    " | Teléfono: " + c.telefono +
+    " | Correo: " + c.correo;
 }

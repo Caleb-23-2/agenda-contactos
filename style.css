@@ -34,3 +34,6 @@ button:hover { background-color: #2980b9; }
 
 .eliminar { background-color: #e74c3c; margin-top: 5px; }
 .eliminar:hover { background-color: #c0392b; }
+
+#detalle { margin-top: 15px; font-weight: bold; color: #2c3e50; }
+.tarjeta { cursor: pointer; }
