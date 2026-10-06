@@ -49,9 +49,24 @@ function mostrarContactos() {
     const p2 = document.createElement("p");
     p2.textContent = "Correo: " + c.correo;
 
-    tarjeta.append(h3, p1, p2);
+        const btn = document.createElement("button");
+    btn.textContent = "Eliminar";
+    btn.className = "eliminar";
+    btn.onclick = function () {
+      eliminarContacto(c.id);
+    };
+
+    tarjeta.append(h3, p1, p2, btn);
     lista.appendChild(tarjeta);
   });
 }
 
 mostrarContactos();
+
+function eliminarContacto(id) {
+  contactos = contactos.filter(function (c) {
+    return c.id !== id;
+  });
+  mostrarContactos();
+  mostrarMensaje("Contacto eliminado.", false);
+}
